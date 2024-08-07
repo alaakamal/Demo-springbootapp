@@ -26,11 +26,6 @@ public class Employees implements Serializable {
 	public Employees() {
 	}
 
-	/*
-	 * public Long getId() { return rowid; }
-	 * 
-	 * public void setId(Long rowid) { this.rowid = rowid; }
-	 */
 	public String getemployee_id() {
 		return employee_id;
 	}
