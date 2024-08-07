@@ -46,7 +46,7 @@ public class EmployeesControllers {
 	 */
 	@GetMapping("/{id}")
 	@ResponseStatus(value = HttpStatus.OK)
-	public Optional<Employees> getEmployeeById(@PathVariable Long id) {
+	public Optional<Employees> getEmployeeById(@PathVariable String id) {
 		// Employees employees = employeeservice.findEmployeeById(id);
 		return this.employeeservice.findEmployeeById(id);
 	}
@@ -64,7 +64,7 @@ public class EmployeesControllers {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<?> deleteEmployee(@PathVariable Long id) {
+	public ResponseEntity<?> deleteEmployee(@PathVariable String id) {
 		employeeservice.deleteEmployee(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}

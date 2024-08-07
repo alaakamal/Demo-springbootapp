@@ -20,7 +20,7 @@ public class EmployeesService {
 	}
 
 	public Employees addEmployee(Employees employee) {
-		employee.setEmployeeid(UUID.randomUUID().toString());
+		employee.setemployee_id(UUID.randomUUID().toString());
 		return employeesrepository.save(employee);
 	}
 
@@ -32,11 +32,11 @@ public class EmployeesService {
 		return employeesrepository.save(employee);
 	}
 
-	public void deleteEmployee(Long id) {
+	public void deleteEmployee(String id) {
 		employeesrepository.deleteById(id);
 	}
 
-	public Optional<Employees> findEmployeeById(Long id) {
+	public Optional<Employees> findEmployeeById(String id) {
 		return employeesrepository.findById(id);
 	}
 }

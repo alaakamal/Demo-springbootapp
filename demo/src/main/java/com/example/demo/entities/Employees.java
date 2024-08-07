@@ -3,71 +3,56 @@ package com.example.demo.entities;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 import jakarta.persistence.*;
-//import javax.persistence.Table;
 
-//import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-//@jakarta.persistence.Entity
-//@EntityScan
-//@Entity
-//@Table(name = "EMPLOYEES")
-//@Document(collection = "EMPLOYEES")
 @EntityScan(basePackages = "com.example.demo.entities")
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employees implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(nullable = false, updatable = false)
-	private Long id;
-	private String employeeid;
-	private String firstname;
-	private String lastname;
+	// private Long rowid;
+	private String employee_id;
+	private String first_name;
+	private String last_name;
 	private String email;
-	private String phonenumber;
-	private String jobid;
+	private String phone_number;
+	private String job_id;
 	private BigDecimal salary;
-	private java.sql.Date hiredate;
+	private java.sql.Date hire_date;
 
 	public Employees() {
 	}
 
-	public Long getId() {
-		return id;
+	/*
+	 * public Long getId() { return rowid; }
+	 * 
+	 * public void setId(Long rowid) { this.rowid = rowid; }
+	 */
+	public String getemployee_id() {
+		return employee_id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setemployee_id(String employee_id) {
+		this.employee_id = employee_id;
 	}
 
-	public String getEmployeeid() {
-		return employeeid;
+	public String getfirst_name() {
+		return first_name;
 	}
 
-	public void setEmployeeid(String employeeid) {
-		this.employeeid = employeeid;
+	public void setfirst_name(String first_name) {
+		this.first_name = first_name;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public String getlast_name() {
+		return last_name;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setlast_name(String last_name) {
+		this.last_name = last_name;
 	}
 
 	public String getEmail() {
@@ -78,20 +63,20 @@ public class Employees implements Serializable {
 		this.email = email;
 	}
 
-	public String getPhonenumber() {
-		return phonenumber;
+	public String getphone_number() {
+		return phone_number;
 	}
 
-	public void setPhonenumber(String phonenumber) {
-		this.phonenumber = phonenumber;
+	public void setphone_number(String phone_number) {
+		this.phone_number = phone_number;
 	}
 
-	public String getJobid() {
-		return jobid;
+	public String getjob_id() {
+		return job_id;
 	}
 
-	public void setJobid(String jobid) {
-		this.jobid = jobid;
+	public void setjob_id(String job_id) {
+		this.job_id = job_id;
 	}
 
 	public BigDecimal getSalary() {
@@ -102,23 +87,12 @@ public class Employees implements Serializable {
 		this.salary = salary;
 	}
 
-	public java.sql.Date getHiredate() {
-		return hiredate;
+	public java.sql.Date gethire_date() {
+		return hire_date;
 	}
 
-	public void setHiredate(java.sql.Date hiredate) {
-		this.hiredate = hiredate;
-	}
-
-	@Override
-	public String toString() {
-		return "Employees [id=" + id + ", employeeid=" + employeeid + ", firstname=" + firstname + ", lastname="
-				+ lastname + ", email=" + email + ", phonenumber=" + phonenumber + ", jobid=" + jobid + ", salary="
-				+ salary + ", hiredate=" + hiredate + ", getId()=" + getId() + ", getEmployeeid()=" + getEmployeeid()
-				+ ", getFirstname()=" + getFirstname() + ", getLastname()=" + getLastname() + ", getEmail()="
-				+ getEmail() + ", getPhonenumber()=" + getPhonenumber() + ", getJobid()=" + getJobid()
-				+ ", getSalary()=" + getSalary() + ", getHiredate()=" + getHiredate() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	public void sethire_date(java.sql.Date hire_date) {
+		this.hire_date = hire_date;
 	}
 
 }

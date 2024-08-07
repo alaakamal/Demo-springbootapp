@@ -8,7 +8,7 @@ import com.example.demo.entities.Employees;
 
 @Repository
 @EntityScan(basePackages = "com.example.demo.entities")
-public interface EmployeesRepository extends JpaRepository<Employees, Long> {
+public interface EmployeesRepository extends JpaRepository<Employees, String> {
 	// void deleteEmployeeById(Long id);
 	// Employees findEmployeeById(Long id);
 }
