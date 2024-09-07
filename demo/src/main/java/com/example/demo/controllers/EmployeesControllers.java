@@ -34,38 +34,28 @@ public class EmployeesControllers {
 
 	@GetMapping
 	public ResponseEntity<List<Employees>> getAllEmployees() {
-		List<Employees> employees = employeeservice.findAllEmployees();
-		return new ResponseEntity<>(employees, HttpStatus.OK);
+		return new ResponseEntity<>(this.employeeservice.findAllEmployees(), HttpStatus.OK);
 	}
 
-	/*
-	 * @ResponseStatus(value = HttpStatus.OK) public List<Employees>
-	 * getAllEmployees() { // List<Employees> employees =
-	 * employeeservice.finAllEmployees(); return
-	 * this.employeeservice.finAllEmployees(); }
-	 */
 	@GetMapping("/{id}")
 	@ResponseStatus(value = HttpStatus.OK)
 	public Optional<Employees> getEmployeeById(@PathVariable String id) {
-		// Employees employees = employeeservice.findEmployeeById(id);
 		return this.employeeservice.findEmployeeById(id);
 	}
 
 	@PostMapping("/add")
 	public ResponseEntity<Employees> addEmployee(@RequestBody Employees employee) {
-		Employees newEmployee = employeeservice.addEmployee(employee);
-		return new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
+		return new ResponseEntity<>(this.employeeservice.addEmployee(employee), HttpStatus.CREATED);
 	}
 
 	@PutMapping("/update")
 	public ResponseEntity<Employees> updateEmployee(@RequestBody Employees employee) {
-		Employees updateEmployee = employeeservice.updateEmployees(employee);
-		return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
+		return new ResponseEntity<>(this.employeeservice.updateEmployees(employee), HttpStatus.OK);
 	}
 
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<?> deleteEmployee(@PathVariable String id) {
-		employeeservice.deleteEmployee(id);
+		this.employeeservice.deleteEmployee(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }

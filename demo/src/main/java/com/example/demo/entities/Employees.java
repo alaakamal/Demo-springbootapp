@@ -11,9 +11,8 @@ import jakarta.persistence.*;
 public class Employees implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	// @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(nullable = false, updatable = false)
-	// private Long rowid;
 	private String employee_id;
 	private String first_name;
 	private String last_name;

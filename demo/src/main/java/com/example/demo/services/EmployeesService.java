@@ -20,23 +20,22 @@ public class EmployeesService {
 	}
 
 	public Employees addEmployee(Employees employee) {
-		employee.setemployee_id(UUID.randomUUID().toString());
-		return employeesrepository.save(employee);
+		return this.employeesrepository.save(employee);
 	}
 
 	public List<Employees> findAllEmployees() {
-		return employeesrepository.findAll();
+		return this.employeesrepository.findAll();
 	}
 
 	public Employees updateEmployees(Employees employee) {
-		return employeesrepository.save(employee);
+		return this.employeesrepository.save(employee);
 	}
 
 	public void deleteEmployee(String id) {
-		employeesrepository.deleteById(id);
+		this.employeesrepository.deleteById(id);
 	}
 
 	public Optional<Employees> findEmployeeById(String id) {
-		return employeesrepository.findById(id);
+		return this.employeesrepository.findById(id);
 	}
 }
