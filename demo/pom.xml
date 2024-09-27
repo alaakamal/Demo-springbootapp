@@ -15,6 +15,7 @@
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
+		<ojdbc8-version>19.8.0.0</ojdbc8-version>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -38,7 +39,7 @@
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
-			<version>19.8.0.0</version>
+			<version>${ojdbc8-version}</version>
 		</dependency>
 	</dependencies>
 	<build>
