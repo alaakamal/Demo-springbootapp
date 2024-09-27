@@ -2,8 +2,6 @@ package com.example.demo.services;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
-
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.stereotype.Service;
 
