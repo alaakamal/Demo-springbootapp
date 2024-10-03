@@ -13,7 +13,7 @@ public class Employees implements Serializable {
 	@Id
 	// @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(nullable = false, updatable = false)
-	private String employee_id;
+	private Long employee_id;
 	private String first_name;
 	private String last_name;
 	private String email;
@@ -21,15 +21,42 @@ public class Employees implements Serializable {
 	private String job_id;
 	private BigDecimal salary;
 	private java.sql.Date hire_date;
+	private Long manager_id;
+	private Long department_id;
+	private long commission_pct;
+
+	public long getCommission_pct() {
+		return commission_pct;
+	}
+
+	public void setCommission_pct(long commission_pct) {
+		this.commission_pct = commission_pct;
+	}
+
+	public Long getManager_id() {
+		return manager_id;
+	}
+
+	public void setManager_id(Long manager_id) {
+		this.manager_id = manager_id;
+	}
+
+	public Long getDepartment_id() {
+		return department_id;
+	}
+
+	public void setDepartment_id(Long department_id) {
+		this.department_id = department_id;
+	}
 
 	public Employees() {
 	}
 
-	public String getemployee_id() {
+	public Long getemployee_id() {
 		return employee_id;
 	}
 
-	public void setemployee_id(String employee_id) {
+	public void setemployee_id(Long employee_id) {
 		this.employee_id = employee_id;
 	}
 

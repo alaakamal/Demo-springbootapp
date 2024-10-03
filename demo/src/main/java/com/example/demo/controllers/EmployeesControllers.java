@@ -24,6 +24,7 @@ import java.util.Optional;
 @RequestMapping(value = "Employees")
 @CrossOrigin(origins = "http://localhost:4200")
 @EntityScan(basePackages = "com.example.demo.entities")
+
 public class EmployeesControllers {
 	@Autowired
 	private EmployeesService employeeservice;
@@ -39,7 +40,7 @@ public class EmployeesControllers {
 
 	@GetMapping("/{id}")
 	@ResponseStatus(value = HttpStatus.OK)
-	public Optional<Employees> getEmployeeById(@PathVariable String id) {
+	public Optional<Employees> getEmployeeById(@PathVariable Long id) {
 		return this.employeeservice.findEmployeeById(id);
 	}
 
@@ -54,7 +55,7 @@ public class EmployeesControllers {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<?> deleteEmployee(@PathVariable String id) {
+	public ResponseEntity<?> deleteEmployee(@PathVariable Long id) {
 		this.employeeservice.deleteEmployee(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}

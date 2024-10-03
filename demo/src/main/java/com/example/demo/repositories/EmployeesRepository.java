@@ -8,5 +8,5 @@ import com.example.demo.entities.Employees;
 
 @Repository
 @EntityScan(basePackages = "com.example.demo.entities")
-public interface EmployeesRepository extends JpaRepository<Employees, String> {
+public interface EmployeesRepository extends JpaRepository<Employees, Long> {
 }

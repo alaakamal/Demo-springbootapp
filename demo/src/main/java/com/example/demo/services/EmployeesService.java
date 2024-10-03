@@ -29,11 +29,11 @@ public class EmployeesService {
 		return this.employeesrepository.save(employee);
 	}
 
-	public void deleteEmployee(String id) {
+	public void deleteEmployee(Long id) {
 		this.employeesrepository.deleteById(id);
 	}
 
-	public Optional<Employees> findEmployeeById(String id) {
+	public Optional<Employees> findEmployeeById(Long id) {
 		return this.employeesrepository.findById(id);
 	}
 }
